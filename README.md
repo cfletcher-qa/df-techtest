@@ -27,7 +27,6 @@ git --version
 │   ├── sections/
 │   └── locators/
 ├── tests/                     # Playwright test files
-├── helper/                    # Shared setup helpers
 ├── playwright.config.js
 ├── package.json
 ├── package-lock.json
