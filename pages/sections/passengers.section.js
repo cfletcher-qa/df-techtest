@@ -15,15 +15,13 @@ class Passengers {
     await this.confirmButton.click();
   }
 
-  // Compatibility wrappers expected by some tests
   async openPassengerSelector() {
     await this.page.getByText('Adult').first().click();
   }
 
   async setAdults(n) {
     if (!n || n <= 0) return;
-    // Assume default adults = 1 in the UI; click plus (n - 1) times
-    const times = Math.max(0, n - 1);
+    const times = Math.max(0, n);
     await this.add('adult', times);
   }
 

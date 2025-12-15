@@ -11,9 +11,6 @@ class HomePage {
     this.ports = new Ports(page);
     this.dateTime = new DateTime(page);
     this.passengers = new Passengers(page);
-    // alias kept for older tests
-    this.passengerSelector = this.passengers;
-
     this.returnJourney = page.getByTestId('search-widget-search-return-segment');
     this.searchButton = page.getByRole('button', { name: /search/i });
   }
