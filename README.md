@@ -22,13 +22,15 @@ git --version
 
 ## 📁 Project Structure
 ```.
-├── pages/                     # Page objects & sections
-├── tests/                     # Test files
-├── helper/                    # Shared setup (cookie, config helpers)
-├── .github/workflows/         # CI workflows (if present)
+.
+├── pages/                     # Page objects & reusable sections
+│   ├── sections/
+│   └── locators/
+├── tests/                     # Playwright test files
+├── helper/                    # Shared setup helpers
+├── playwright.config.js
 ├── package.json
 ├── package-lock.json
-├── playwright.config.js
 └── README.md
 ```
 
