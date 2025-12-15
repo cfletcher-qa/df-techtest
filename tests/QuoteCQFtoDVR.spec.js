@@ -1,0 +1,32 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://openferry.com/');
+  await page.getByRole('heading', { name: 'We value your privacy' }).click();
+  await page.getByRole('button', { name: 'Accept' }).click();
+  await page.getByRole('heading', { name: 'Book your ferry tickets' }).click();
+  await page.getByTestId('search-widget-search-return-segment').click();
+  await page.getByTestId('home-search-widget-outbound-popup-port-field-input').click();
+  await page.getByTestId('home-search-widget-outbound-popup-port-field-input').fill('Calais');
+  await page.getByTestId('search-widget-outbound-destinations-port-result-FRCQF').click();
+  await page.getByTestId('home-search-widget-return-popup-port-field-input').click();
+  await page.getByTestId('search-widget-return-popular-destination-port-result-GBDVR').click();
+  await page.getByTestId('calendar-container-year-2026-month-1').getByRole('button', { name: '19' }).click();
+  await page.getByTestId('calendar-container-year-2026-month-1').getByRole('button', { name: '22' }).click();
+  await page.getByText('Select date').click();
+  await page.getByTestId('search-widget-date-selector-footer-submit-button').click();
+  await page.getByText('Select time').click();
+  await page.getByTestId('search-widget-date-selector-time-outbound-slot-afternoon').click();
+  await page.getByTestId('search-widget-date-selector-time-return-slot-morning').click();
+  await page.getByTestId('search-widget-date-selector-footer-submit-button').click();
+  await page.getByText('Adult').click();
+  await page.getByTestId('search-widget-quote-selector-popup-adult-container').getByTestId('counter-plus').click();
+  await page.getByTestId('search-widget-quote-selector-popup-adult-container').getByTestId('counter-plus').click();
+  await page.getByTestId('search-widget-quote-selector-popup-pet-container').getByTestId('counter-plus').click();
+  await page.getByTestId('search-widget-quote-selector-popup-car-container').getByTestId('counter-plus').click();
+  await page.getByTestId('search-widget-quote-selector-popup-confirm').click();
+  await page.getByTestId('search-widget-pop-under-toggle-label').first().click();
+  await page.getByRole('button', { name: 'search Search' }).click();
+  await page.getByTestId('result-trip-0-route-normal-p&o-ferries-eyjhcii6ijiwmjytmdetmtkgmti6mzuilcjjswqioijqt0yilcjjy3kioijhqlailcjkijoir0jevliilcjkzsi6ijiwmjytmdetmtkgmti6mduilcjvijoirljduuyilcjvchqionsiywqiojisimnhijoxlcjwzsi6mx0sinbjzci6ikrjukvdvf9grvjssuvtiiwicgnjzci6ijcifq-card').getByTestId('result-trip-route-card-select-button').click();
+  await page.getByTestId('result-trip-1-route-discounted-p&o-ferries-eyjhcii6ijiwmjytmdetmjigmdk6mdailcjjswqioijqt0yilcjjy3kioijhqlailcjkijoirljduuyilcjkzsi6ijiwmjytmdetmjigmdy6mzailcjvijoir0jevliilcjvchqionsiywqiojisimnhijoxlcjwzsi6mx0sim91dci6imv5smhjauk2swpjd01qwxrnrev0tvrrz01ustznelvptenkalnxuwlpauprvdbzauxdsmpzm2tpt2lksffsqwlmq0prswpvaviwskvwbelptenka1ptstzjakl3twpzde1erxrnvgtntvrjnk1evwlmq0p2swpvavjsskrvvvlptenkdmniuwlpbnnpwvdrau9qsxnjbu5oswpveexdsndau0k2tvgwc0luqkpaq0k2swtsslvrvkrwrjlhulzku1nvvlrjaxdpy0doslpdstzjamnpzleilcjwswqioijesvjfq1rfrkvsuklfuyisinbjswqioii3in0-card').getByTestId('result-trip-route-card-select-button').click();
+});
